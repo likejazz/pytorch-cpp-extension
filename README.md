@@ -12,3 +12,7 @@ To run:
 ```bash
 ./test.py
 ```
+
+## References
+- <https://pytorch.org/cppdocs/installing.html>
+- <https://github.com/ita9naiwa/attention-impl>
