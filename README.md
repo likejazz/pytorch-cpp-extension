@@ -1,16 +1,14 @@
-Demonstration of using PyTorch with cmake
+Demonstration of using PyTorch with CMake, setup.py
 =========================================
 
-To compile:
-
+To run with CMake:
 ```bash
-cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_PREFIX_PATH=`python -c 'import torch;print(torch.utils.cmake_prefix_path)'` -GNinja ..
+./build-run-cmake.sh
 ```
 
-To run:
-
+To run with setup.py:
 ```bash
-./test.py
+./build-run-py.sh
 ```
 
 ## References
