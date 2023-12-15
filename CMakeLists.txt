@@ -14,5 +14,9 @@ add_library(cudaexpr SHARED
 target_compile_features(cudaexpr PRIVATE cxx_std_11)
 target_link_libraries(cudaexpr PRIVATE ${TORCH_LIBRARIES} Python::Python)
 
-# Use if the default GCC version gives issues
+# Use if the default GCC version gives issues.
 target_compile_options(cudaexpr PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-ccbin g++>)
+
+# Use this for the executable file.
+add_executable(cudaexprbin main.cpp cudaexpr.cu)
+target_link_libraries(cudaexprbin "${TORCH_LIBRARIES}" Python::Python)

@@ -1,3 +1,6 @@
+#include <c10/cuda/CUDAException.h>
+
+#include <torch/torch.h>
 #include <torch/extension.h>
 #include <torch/library.h>
 
@@ -23,6 +26,7 @@ torch::Tensor add_one(const torch::Tensor &input) {
                         output.data_ptr<scalar_t>(),
                         input.numel()
                 );
+                C10_CUDA_KERNEL_LAUNCH_CHECK();
             }
     );
 
